@@ -1,0 +1,47 @@
+html, body{
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #7fc4db;
+  /*position: relative;*/
+
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+  }
+
+#searchmovies:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+  outline: none;
+}
+
+.bg-col-sha{
+  border: 1px solid white;
+  background-color: #1795b8;
+  box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.3);
+
+}
+
+.middle {
+  line-height: 20px;
+  margin: 0;
+  padding: 10px 0 10px 0;
+  color: white;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.head-text {
+  color: #dcf285;
+}

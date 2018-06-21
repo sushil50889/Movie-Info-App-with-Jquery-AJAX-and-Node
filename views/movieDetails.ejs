@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Details</title>
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/fa/css/font-awesome.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+
+    <div class="vertical-center bg-col-sha w-75">
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <div class='text-right p-4'>
+          <% if(movie.poster_path){ %>
+            <img class='img-thumbnail img-responsive' src="https://image.tmdb.org/t/p/w500<%=movie.poster_path%>" alt="poster">
+          <% }else{ %>
+            <img class='img-thumbnail img-responsive w-100' src="http://www.kyoglecinemas.com.au/wp-content/uploads/Movie-Poster-Blank.jpg" alt="poster">
+          <% } %>
+        </div>
+      </div>
+      <div class="col-sm-8 col-xs-12">
+        <div class='p-4'>
+          <% var year = movie.release_date.substring(0, 4); %>
+          <h1 class="h2 text-center text-white m-0 p-0"><%=movie.original_title%> (<%= year %>)</h1>
+          <% if(movie.tagline.length > 0) {  %>
+              <p class="h5 text-center text-white m-0 p-0"><%=movie.tagline%></p>
+          <%  } %>
+
+          <p class="head-text h6 mt-2 p-0">Overview :  <span class="text-white h6 m-0 p-0"><small>   <%=movie.overview%></small></span></p>
+
+          <ul class="list-inline mt-0 p-0">
+              <li class="list-inline-item h6 head-text m-0 p-0">Genres :   </li>
+            <% movie.genres.forEach(function(genres){ %>
+              <small><li class="list-inline-item m-0 p-0 text-white">  <%=genres.name%>, </li></small>
+            <%  }) %>
+          </ul>
+
+          <p class="head-text h6 mt-0 p-0">IMDB Id :  <span class="text-white h6 m-0 p-0"><small>   <%=movie.imdb_id%></small></span></p>
+
+          <p class="head-text h6 mt-0 p-0">Language :  <span class="text-white h6 m-0 p-0"><small>    <%=movie.original_language%></small></span></p>
+
+
+          <ul class="list-inline mt-0 p-0">
+              <li class="list-inline-item h6 head-text m-0 p-0">Production :   </li>
+            <% movie.production_companies.forEach(function(production){ %>
+              <small><li class="list-inline-item m-0 p-0 text-white">  <%=production.name%>, </li></small>
+            <%  }) %>
+          </ul>
+
+
+          <p class="head-text h6 mt-0 p-0">Release Date :   <span class="text-white h6 m-0 p-0"><small>  <%=movie.release_date%></small></span></p>
+
+          <p class="head-text h6 mt-0 p-0">Run Time :   <span class="text-white h6 m-0 p-0"><small>  <%=movie.runtime%> min</small></span></p>
+
+          <p class="head-text h6 mt-0 p-0">Voted :   <span class="text-white h6 m-0 p-0"><small><i class="fa fa-thumbs-o-up" aria-hidden="true"> </i>  <%=movie.vote_count%></small></span></p>
+
+        </div>
+      </div>
+    </div>
+    </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/javascripts/jquery-3.2.1.min.js"></script>
+  <script src="/javascripts/popper.js"></script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+  <script src="/javascripts/main.js"></script>
+</body>
+</html>
